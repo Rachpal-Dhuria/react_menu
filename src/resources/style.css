@@ -1,0 +1,15 @@
+*{
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+body{
+    font-family: 'Righteous';
+    font-family: 'Roboto', sans-serif;
+}
+.font-righteous {font-family: 'Righteous';font-size: 37px;}
+
+.header-logo-title {
+    font-family: 'Roboto';
+    font-size: 19px;
+}
