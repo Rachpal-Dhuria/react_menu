@@ -1,12 +1,19 @@
-import React from 'react';
-import { AppBar, Toolbar, IconButton, Icon  } from '@mui/material';
+import React, { useState, useEffect } from 'react';
+import { AppBar, Toolbar, IconButton, Icon,   } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
+import Sidebar from './Sidebar';
 
 
 
 
 
 const Header = () => {
+
+    const [drwaerOpen,setDrawerOpen] = useState(false)
+    const toggleDrawer = (value) => {
+        setDrawerOpen(value)
+    }
+
     return(
         <>
         <AppBar
@@ -21,20 +28,23 @@ const Header = () => {
 
         <Toolbar>
 
-        <div className="Header_logo">
-            <div className="font-righteous"> The Venue </div>
-            <div className="header-logo-title">Musical Events</div>
+        <div className="header_logo">
+            <div className="font_righteous header_logo_venue"> The Venue </div>
+            <div className="header_logo_title">Musical Events</div>
         </div>
 
         <IconButton
         aria-label="Menu"
+        onClick={()=> toggleDrawer(true)}
         
         >
             <MenuIcon  style={{
-            color:'#ffffff',
+            color:'#ffffff',    
             alignItems:"flex-end"
         }}/>
         </IconButton>
+
+        <Sidebar open={drwaerOpen} onClose={(value)=> toggleDrawer(value)}        />
 
         </Toolbar>
 
